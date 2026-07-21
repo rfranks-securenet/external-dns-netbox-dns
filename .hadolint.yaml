@@ -1,0 +1,9 @@
+# Trust specific registries for base images
+trustedRegistries:
+  - docker.io
+  - gcr.io
+  - ghcr.io
+
+# Set the default failure threshold
+# Possible values: error, warning, info, style, ignore, none
+failure-threshold: warning
