@@ -13,9 +13,10 @@ import Cache
 
 
 class DomainFilter(Resource):
-    """ Resource for returning the domain filter """
+    """Resource for returning the domain filter"""
+
     def get(self):
-        """ Handle a get request """
+        """Handle a get request"""
         logging.debug("Running DomainFilter")
         allowed_zones = os.getenv("DOMAIN_FILTERS", "")
         zonelist = []
@@ -27,4 +28,8 @@ class DomainFilter(Resource):
                     zonelist.append(zone.name)
             except KeyError:
                 pass
-        return Response(json.dumps({'filters': zonelist}), status=200, mimetype='application/external.dns.webhook+json;version=1')
+        return Response(
+            json.dumps({"filters": zonelist}),
+            status=200,
+            mimetype="application/external.dns.webhook+json;version=1",
+        )

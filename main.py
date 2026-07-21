@@ -26,10 +26,10 @@ app = Flask(__name__)
 app.debug = True
 api = Api(app)
 
-api.add_resource(DomainFilter, '/')
-api.add_resource(Records, '/records')
-api.add_resource(Health, '/healthz')
-api.add_resource(AdjustEndpoints, '/adjustendpoints')
+api.add_resource(DomainFilter, "/")
+api.add_resource(Records, "/records")
+api.add_resource(Health, "/healthz")
+api.add_resource(AdjustEndpoints, "/adjustendpoints")
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run(debug=True)

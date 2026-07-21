@@ -15,10 +15,15 @@ logger = logging.getLogger(__name__)
 
 
 class AdjustEndpoints(Resource):
-    """ Resource for returning adjusted endpoints """
+    """Resource for returning adjusted endpoints"""
+
     def post(self):
-        """ Handle a post request """
+        """Handle a post request"""
 
         logger.debug("Running adjustendpoints")
         body = json.loads(request.data)
-        return Response(json.dumps(body), status=200, mimetype='application/external.dns.webhook+json;version=1')
+        return Response(
+            json.dumps(body),
+            status=200,
+            mimetype="application/external.dns.webhook+json;version=1",
+        )

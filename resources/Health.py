@@ -5,10 +5,12 @@ Healthz resource controller
 from flask_restful import Resource
 import Cache
 
+
 class Health(Resource):
-    """ Resource for returning the current plugin health """
+    """Resource for returning the current plugin health"""
+
     def get(self):
-        """ Handle GET request """
+        """Handle GET request"""
         try:
             Cache.controller.recordList.records
         except Exception as e:
