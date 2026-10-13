@@ -20,7 +20,7 @@ jobs:
       packages: write
       attestations: write
       id-token: write
-    if: github.repository_owner == 'sncs-uk'
+    #if: github.repository_owner == 'sncs-uk'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
