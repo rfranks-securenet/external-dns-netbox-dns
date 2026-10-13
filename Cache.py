@@ -25,6 +25,7 @@ def test_connection():
 
     adapter = TimeoutHTTPAdapter()
     session = requests.Session()
+    session.verify = False
     session.mount("http://", adapter)
     session.mount("https://", adapter)
 
