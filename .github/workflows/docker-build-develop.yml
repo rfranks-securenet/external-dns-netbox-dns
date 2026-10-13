@@ -3,8 +3,8 @@ name: Build develop docker image
 on:
   push:
     paths:
-      - cmd/**
-      - internal/**
+      - resources/**
+      - '*.py'
       - Dockerfile
     branches:
       - main
