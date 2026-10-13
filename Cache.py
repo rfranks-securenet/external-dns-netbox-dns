@@ -41,7 +41,7 @@ def test_connection():
         logger.error(
             "Unable to connect to the netbox instance: %s", os.getenv("NETBOX_URL")
         )
-        logger.error("Message: %s", e.message)
+        logger.error("Message: %s", e)
         exit(1)
     except requests.exceptions.TimeoutError as e:
         logger.error(
