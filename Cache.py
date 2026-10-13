@@ -25,9 +25,10 @@ def test_connection():
 
     adapter = TimeoutHTTPAdapter()
     session = requests.Session()
-    session.verify = False
     session.mount("http://", adapter)
     session.mount("https://", adapter)
+
+    session.verify = False
 
     nb = pynetbox.api(os.getenv("NETBOX_URL"), token=os.getenv("NETBOX_TOKEN"))
     nb.http_session = session
